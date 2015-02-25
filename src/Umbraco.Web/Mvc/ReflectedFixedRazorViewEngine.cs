@@ -7,18 +7,18 @@ namespace Umbraco.Web.Mvc
     /// <summary>
     /// This is here to support compatibility with both MVC4 and MVC5
     /// </summary>
-    public abstract class ReflectedFixedRazorViewEngine : IViewEngine
+    public abstract class ReflectedFixedxsltViewEngine : IViewEngine
     {
-        protected ReflectedFixedRazorViewEngine()
+        protected ReflectedFixedxsltViewEngine()
         {
             if (MvcVersionCheck.MvcVersion >= System.Version.Parse("5.0.0"))
             {
-                _wrappedEngine = new RazorViewEngine();
+                _wrappedEngine = new xsltViewEngine();
             }
             else
             {
                 var assembly = Assembly.Load("Microsoft.Web.Mvc.FixedDisplayModes");
-                var engineType = assembly.GetType("Microsoft.Web.Mvc.FixedRazorViewEngine");
+                var engineType = assembly.GetType("Microsoft.Web.Mvc.FixedxsltViewEngine");
                 _wrappedEngine = (IViewEngine)Activator.CreateInstance(engineType);
             }
         }

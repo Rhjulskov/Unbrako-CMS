@@ -90,7 +90,7 @@ namespace umbraco.cms.helpers
                     editorUrl = "settings/editMediaType.aspx";
                     idKey = "id";
                     break;
-                case DeepLinkType.RazorScript:
+                case DeepLinkType.xsltScript:
                     section = Constants.Applications.Developer;
                     editorUrl = "developer/python/editPython.aspx";
                     idKey = "file";

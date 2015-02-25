@@ -7,14 +7,14 @@ using Umbraco.Core;
 using Umbraco.Core.Macros;
 using Umbraco.Web;
 
-namespace umbraco.MacroEngines.RazorDataTypeModels
+namespace umbraco.MacroEngines.xsltDataTypeModels
 {
 	/// <summary>
 	/// This ensures that the RTE renders with HtmlString encoding and also ensures that the macro contents in it
 	/// render properly too.
 	/// </summary>
-    [RazorDataTypeModel(Constants.PropertyEditors.TinyMCEv3, 90)]
-    public class HtmlStringDataTypeModel : IRazorDataTypeModel
+    [xsltDataTypeModel(Constants.PropertyEditors.TinyMCEv3, 90)]
+    public class HtmlStringDataTypeModel : IxsltDataTypeModel
     {
         public bool Init(int CurrentNodeId, string PropertyData, out object instance)
         {

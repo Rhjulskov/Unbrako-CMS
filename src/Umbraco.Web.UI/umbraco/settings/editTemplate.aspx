@@ -129,7 +129,7 @@
     </cc1:TabView>
     <div id="splitButton" style="display: inline; height: 23px; vertical-align: top;">
         <a href="#" id="sb" class="sbLink">
-            <img alt="Insert Inline Razor Macro" src="../images/editor/insRazorMacro.png" title="Insert Inline Razor Macro"
+            <img alt="Insert Inline xslt Macro" src="../images/editor/insxsltMacro.png" title="Insert Inline xslt Macro"
                 style="vertical-align: top;">
         </a>
     </div>

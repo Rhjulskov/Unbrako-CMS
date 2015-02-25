@@ -5,7 +5,7 @@ using System.Text;
 
 namespace umbraco.MacroEngines
 {
-    public interface IRazorDataTypeModel
+    public interface IxsltDataTypeModel
     {
         bool Init(int CurrentNodeId, string PropertyData, out object instance);
     }

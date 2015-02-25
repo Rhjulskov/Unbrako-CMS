@@ -274,7 +274,7 @@ namespace umbraco.MacroEngines
                     }
                     catch (TargetInvocationException)
                     {
-                        //We do this to enable error checking of Razor Syntax when a method e.g. ElementAt(2) is used.
+                        //We do this to enable error checking of xslt Syntax when a method e.g. ElementAt(2) is used.
                         //When the Script is tested, there's no Children which means ElementAt(2) is invalid (IndexOutOfRange)
                         //Instead, we are going to return an empty DynamicNode.
                         result = new DynamicNode();

@@ -13,7 +13,7 @@ namespace Umbraco.Web.Mvc
 	/// A view engine to look into the template location specified in the config for the front-end/Rendering part of the cms,
 	/// this includes paths to render partial macros and media item templates.
 	/// </summary>
-    public class RenderViewEngine : ReflectedFixedRazorViewEngine
+    public class RenderViewEngine : ReflectedFixedxsltViewEngine
 	{
 
 		private readonly IEnumerable<string> _supplementedViewLocations = new[] { "/{0}.cshtml" };
@@ -43,7 +43,7 @@ namespace Umbraco.Web.Mvc
 		}
 
 		/// <summary>
-		/// Ensures that the correct web.config for razor exists in the /Views folder, the partials folder exist and the ViewStartPage exists.
+		/// Ensures that the correct web.config for xslt exists in the /Views folder, the partials folder exist and the ViewStartPage exists.
 		/// </summary>
 		private void EnsureFoldersAndFiles()
 		{

@@ -1,6 +1,6 @@
 ﻿(function () {
 
-    CodeMirror.razorHints = [];
+    CodeMirror.xsltHints = [];
 
 
     function arrayContains(arr, item) {
@@ -17,7 +17,7 @@
     }
 
 
-    CodeMirror.razorHint = function (editor, char) {
+    CodeMirror.xsltHint = function (editor, char) {
 
         if (char.length > 0) {
             var cursor = editor.getCursor();
@@ -67,9 +67,9 @@
 
     function searchHints(text, trigger, search) {
         if (search == "") {
-            var hints = CodeMirror.razorHints[text];
+            var hints = CodeMirror.xsltHints[text];
             if (typeof hints === 'undefined')
-                hints = CodeMirror.razorHints[simbol];
+                hints = CodeMirror.xsltHints[simbol];
 
             return hints;
         } else {
@@ -90,8 +90,8 @@
             else if (match[0].toLowerCase().indexOf(search) == 0 && !arrayContains(found, match)) found.push(match);
         }
 
-        forEach(CodeMirror.razorHints[text], maybeAdd);
-        forEach(CodeMirror.razorHints[trigger], maybeAdd);
+        forEach(CodeMirror.xsltHints[text], maybeAdd);
+        forEach(CodeMirror.xsltHints[trigger], maybeAdd);
 
         return found.sort(function (a, b) {
             var nameA = a[0].toLowerCase(), nameB = b[0].toLowerCase()

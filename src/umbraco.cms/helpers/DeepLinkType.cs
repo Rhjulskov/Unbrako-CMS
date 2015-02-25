@@ -13,7 +13,7 @@ namespace umbraco.cms.helpers
         Media,
         MediaType,
         XSLT,
-        RazorScript,
+        xsltScript,
         Css,
         Javascript,
         Macro,

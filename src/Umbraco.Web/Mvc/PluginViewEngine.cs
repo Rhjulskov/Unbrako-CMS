@@ -10,7 +10,7 @@ namespace Umbraco.Web.Mvc
     /// <summary>
 	/// A view engine to look into the App_Plugins folder for views for packaged controllers
 	/// </summary>
-    public class PluginViewEngine : ReflectedFixedRazorViewEngine
+    public class PluginViewEngine : ReflectedFixedxsltViewEngine
 	{
 		
 		/// <summary>
@@ -67,15 +67,15 @@ namespace Umbraco.Web.Mvc
 		}
 
 		/// <summary>
-		/// Ensures that the correct web.config for razor exists in the /Views folder.
+		/// Ensures that the correct web.config for xslt exists in the /Views folder.
 		/// </summary>
 		private void EnsureFolderAndWebConfig(ViewEngineResult result)
 		{
 			if (result.View == null) return;
-			var razorResult = result.View as RazorView;
-			if (razorResult == null) return;
+			var xsltResult = result.View as xsltView;
+			if (xsltResult == null) return;
 
-			var folder = Path.GetDirectoryName(IOHelper.MapPath(razorResult.ViewPath));
+			var folder = Path.GetDirectoryName(IOHelper.MapPath(xsltResult.ViewPath));
 			//now we need to get the /View/ folder
 			var viewFolder = folder.Substring(0, folder.LastIndexOf("\\Views\\")) + "\\Views";
 

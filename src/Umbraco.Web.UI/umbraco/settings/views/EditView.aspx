@@ -59,7 +59,7 @@
         
          <cc1:Pane ID="Pane8" runat="server" >
             <cc1:PropertyPanel ID="pp_source" runat="server">
-                <cc1:CodeArea ID="editorSource" runat="server" CodeBase="Razor" ClientSaveMethod="doSubmit" AutoResize="false" />
+                <cc1:CodeArea ID="editorSource" runat="server" CodeBase="xslt" ClientSaveMethod="doSubmit" AutoResize="false" />
             </cc1:PropertyPanel>
          </cc1:Pane>
             

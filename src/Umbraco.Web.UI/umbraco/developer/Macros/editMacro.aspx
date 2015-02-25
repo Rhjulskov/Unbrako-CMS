@@ -82,7 +82,7 @@
                     <asp:PlaceHolder ID="assemblyBrowserUserControl" runat="server"></asp:PlaceHolder>
         </cc1:PropertyPanel>
 
-        <cc1:PropertyPanel runat="server" Text="Razor script">
+        <cc1:PropertyPanel runat="server" Text="xslt script">
              <asp:TextBox ID="macroPython" runat="server" CssClass="guiInputText"></asp:TextBox>
                     <asp:DropDownList ID="pythonFiles" runat="server">
                     </asp:DropDownList>

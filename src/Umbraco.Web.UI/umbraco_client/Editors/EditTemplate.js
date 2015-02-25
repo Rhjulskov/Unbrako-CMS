@@ -93,7 +93,7 @@
             $('#sbMacro').splitbutton({ menu: '#macroMenu' });
             $("#splitButtonMacro").appendTo("#splitButtonMacroPlaceHolder");
 
-            ////razor macro split button
+            ////xslt macro split button
             $('#sb').splitbutton({ menu: '#codeTemplateMenu' });
             $("#splitButton").appendTo("#splitButtonPlaceHolder");
 

@@ -2,7 +2,7 @@
 
 namespace Umbraco.Core.Configuration.UmbracoSettings
 {
-    public interface IRazorStaticMapping
+    public interface IxsltStaticMapping
     {
         Guid DataTypeGuid { get; }
         string NodeTypeAlias { get; }

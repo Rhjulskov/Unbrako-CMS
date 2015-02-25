@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Umbraco.Core.Configuration.UmbracoSettings
 {
-    internal class RazorElement : ConfigurationElement
+    internal class xsltElement : ConfigurationElement
     {
         private NotDynamicXmlDocumentElementCollection _defaultCollection;
 
@@ -44,11 +44,11 @@ namespace Umbraco.Core.Configuration.UmbracoSettings
                         };
         }
 
-        [ConfigurationCollection(typeof (RazorStaticMappingCollection), AddItemName = "mapping")]
+        [ConfigurationCollection(typeof (xsltStaticMappingCollection), AddItemName = "mapping")]
         [ConfigurationProperty("dataTypeModelStaticMappings", IsDefaultCollection = true)]
-        internal RazorStaticMappingCollection DataTypeModelStaticMappings
+        internal xsltStaticMappingCollection DataTypeModelStaticMappings
         {
-            get { return (RazorStaticMappingCollection) base["dataTypeModelStaticMappings"]; }
+            get { return (xsltStaticMappingCollection) base["dataTypeModelStaticMappings"]; }
         }
 
     }

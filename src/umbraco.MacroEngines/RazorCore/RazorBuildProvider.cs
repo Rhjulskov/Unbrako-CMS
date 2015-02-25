@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.WebPages.Razor;
+using System.Web.WebPages.xslt;
 
 namespace umbraco.MacroEngines {
 
@@ -7,7 +7,7 @@ namespace umbraco.MacroEngines {
     /// Stub Build Provider If Want To Implement Anything Advanced In The Future
     /// Also Allows Us To Register Build Provider In Medium Trust
     /// </summary>
-    public class RazorBuildProvider : System.Web.WebPages.Razor.RazorBuildProvider {
+    public class xsltBuildProvider : System.Web.WebPages.xslt.xsltBuildProvider {
 
     }
 }

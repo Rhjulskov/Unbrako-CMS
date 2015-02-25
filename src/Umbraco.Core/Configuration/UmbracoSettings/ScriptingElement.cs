@@ -5,20 +5,20 @@ namespace Umbraco.Core.Configuration.UmbracoSettings
 {
     internal class ScriptingElement : ConfigurationElement, IScriptingSection
     {
-        [ConfigurationProperty("razor")]
-        internal RazorElement Razor
+        [ConfigurationProperty("xslt")]
+        internal xsltElement xslt
         {
-            get { return (RazorElement) base["razor"]; }
+            get { return (xsltElement) base["xslt"]; }
         }
 
         IEnumerable<INotDynamicXmlDocument> IScriptingSection.NotDynamicXmlDocumentElements
         {
-            get { return Razor.NotDynamicXmlDocumentElements; }
+            get { return xslt.NotDynamicXmlDocumentElements; }
         }
 
-        IEnumerable<IRazorStaticMapping> IScriptingSection.DataTypeModelStaticMappings
+        IEnumerable<IxsltStaticMapping> IScriptingSection.DataTypeModelStaticMappings
         {
-            get { return Razor.DataTypeModelStaticMappings; }
+            get { return xslt.DataTypeModelStaticMappings; }
         }
     }
 }

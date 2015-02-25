@@ -48,7 +48,7 @@ del ..\src\Umbraco.Web.UI\masterpages\*.*
 echo Removing view files
 del ..\src\Umbraco.Web.UI\Views\*.*
 
-echo Removing razor files
+echo Removing xslt files
 del ..\src\Umbraco.Web.UI\macroScripts\*.*
 
 echo Removing media files
@@ -106,7 +106,7 @@ FOR %%A IN (..\src\Umbraco.Web.UI\usercontrols\*.*) DO DEL %%A
 echo Removing view files
 FOR %%A IN (..\src\Umbraco.Web.UI\Views\*.*) DO DEL %%A
 
-echo Removing razor files
+echo Removing xslt files
 FOR %%A IN (..\src\Umbraco.Web.UI\macroScripts\*.*) DO DEL %%A
 
 echo Removing media files

@@ -38,7 +38,7 @@
     <cc1:TabView ID="UmbracoPanel1" runat="server" Text="Edit scripting file">
         
         <cc1:Pane ID="Pane1" runat="server" Style="margin-bottom: 10px;">
-            <cc1:CodeArea ID="pythonSource" ClientSaveMethod="doSubmit" AutoSuggest="true"  CodeBase="Razor" AutoResize="false" runat="server" />
+            <cc1:CodeArea ID="pythonSource" ClientSaveMethod="doSubmit" AutoSuggest="true"  CodeBase="xslt" AutoResize="false" runat="server" />
         </cc1:Pane>
 
         <cc1:Pane ID="Pane2" runat="server">

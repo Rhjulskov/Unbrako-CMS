@@ -9,7 +9,7 @@
     <sectionGroup name="applicationSettings" xdt:Locator="Match(name)">
 		<section name="umbraco.presentation.Properties.Settings" xdt:Locator="Match(name)" xdt:Transform="Remove" />
 	</sectionGroup>
-    <sectionGroup name="system.web.webPages.razor" xdt:Locator="Match(name)" xdt:Transform="Remove" />
+    <sectionGroup name="system.web.webPages.xslt" xdt:Locator="Match(name)" xdt:Transform="Remove" />
     <sectionGroup name="umbracoConfiguration" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing">
       <section name="settings" type="Umbraco.Core.Configuration.UmbracoSettings.UmbracoSettingsSection, Umbraco.Core" requirePermission="false" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
       <section name="BaseRestExtensions" type="Umbraco.Core.Configuration.BaseRest.BaseRestSection, Umbraco.Core" requirePermission="false" xdt:Locator="Match(name)" xdt:Transform="InsertIfMissing" />
@@ -161,7 +161,7 @@
     </assemblyBinding>
   </runtime>
 
-  <system.web.webPages.razor xdt:Transform="Remove" />
+  <system.web.webPages.xslt xdt:Transform="Remove" />
   
   <location path="umbraco" xdt:Locator="Match(path)" xdt:Transform="InsertIfMissing" />
   <location path="umbraco" xdt:Locator="Match(path)">

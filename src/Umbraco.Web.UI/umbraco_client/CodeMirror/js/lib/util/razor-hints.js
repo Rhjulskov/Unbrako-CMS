@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    CodeMirror.razorHints['@'] = [
+    CodeMirror.xsltHints['@'] = [
               'inherits',
               'Library',
               'Model',
@@ -14,7 +14,7 @@
               ['helper', 'helperMethod(Model)\n\n@helperMethod(dynamic val){\n\t<p>Hello @val.Name\n}\n\n'],
           ];
 
-    CodeMirror.razorHints['.'] = [
+    CodeMirror.xsltHints['.'] = [
               'Ancestors',
               'AncestorsOrSelf',
               'Children',
@@ -57,23 +57,23 @@
               'Level',
           ];
 
-    CodeMirror.razorHints['@Library.'] = [
+    CodeMirror.xsltHints['@Library.'] = [
             'Search()',
             'NodeById()',
           ];
 
-    CodeMirror.razorHints['@Model.'] =
-          CodeMirror.razorHints['<levelRoot><'] =
-          CodeMirror.razorHints['<mainLevel><'] = [
+    CodeMirror.xsltHints['@Model.'] =
+          CodeMirror.xsltHints['<levelRoot><'] =
+          CodeMirror.xsltHints['<mainLevel><'] = [
               'second',
               'two'
           ];
 
-    CodeMirror.razorHints['<levelTop><second '] = [
+    CodeMirror.xsltHints['<levelTop><second '] = [
             'secondProperty'
           ];
 
-    CodeMirror.razorHints['<levelTop><second><'] = [
+    CodeMirror.xsltHints['<levelTop><second><'] = [
             'three',
             'x-three'
           ];

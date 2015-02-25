@@ -1211,7 +1211,7 @@ namespace umbraco.cms.businesslogic
             ApplicationContext.Current.ApplicationCache.ClearCacheItem(ct.GetPropertiesCacheKey());
             ct.ClearVirtualTabs();
 
-            //clear the content type from the property datatype cache used by razor
+            //clear the content type from the property datatype cache used by xslt
             RemoveFromDataTypeCache(ct.Alias);
 
             // clear anything that uses this as master content type

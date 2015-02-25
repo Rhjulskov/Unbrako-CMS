@@ -123,7 +123,7 @@ namespace umbraco.cms.businesslogic.macro
 		}
 
 	    /// <summary>
-	    /// This field is used to store the file value for any scripting macro such as python, ruby, razor macros or Partial View Macros        
+	    /// This field is used to store the file value for any scripting macro such as python, ruby, xslt macros or Partial View Macros        
 	    /// </summary>
 	    /// <remarks>
 	    /// Depending on how the file is stored depends on what type of macro it is. For example if the file path is a full virtual path

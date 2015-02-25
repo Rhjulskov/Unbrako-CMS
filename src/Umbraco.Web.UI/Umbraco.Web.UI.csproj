@@ -241,9 +241,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.xslt, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.xslt.2.0.30506.0\lib\net40\System.Web.xslt.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Services">
       <Name>System.Web.Services</Name>
@@ -256,9 +256,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.WebPages.xslt, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.xslt.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
@@ -712,8 +712,8 @@
     <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\multiplex.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\overlay.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\pig-hint.js" />
-    <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\razor-hint.js" />
-    <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\razor-hints.js" />
+    <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\xslt-hint.js" />
+    <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\xslt-hints.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\runmode-standalone.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\runmode.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Lib\Util\search.js" />
@@ -786,8 +786,8 @@
     <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Python\index.html" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Python\LICENSE.txt" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Python\python.js" />
-    <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Razor\index.html" />
-    <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Razor\razor.js" />
+    <Content Include="Umbraco_Client\CodeMirror\Js\Mode\xslt\index.html" />
+    <Content Include="Umbraco_Client\CodeMirror\Js\Mode\xslt\xslt.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Rpm\Changes\changes.js" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Rpm\Changes\index.html" />
     <Content Include="Umbraco_Client\CodeMirror\Js\Mode\Rpm\Spec\index.html" />
@@ -1559,7 +1559,7 @@
     <Content Include="Umbraco_Client\Tinymce3\Utils\mctabs.js" />
     <Content Include="Umbraco_Client\Tinymce3\Utils\validate.js" />
     <Content Include="Umbraco\Images\Editor\insMacroSB.png" />
-    <Content Include="Umbraco\Images\Editor\insRazorMacro.png" />
+    <Content Include="Umbraco\Images\Editor\insxsltMacro.png" />
     <Content Include="Umbraco_Client\Application\JQuery\jquery.hotkeys.js" />
     <Content Include="Umbraco_Client\MaskedInput\jquery.maskedinput-1.3.min.js" />
     <Content Include="Umbraco_Client\Splitbutton\Images\splitbutton_hover.png" />
@@ -2074,7 +2074,7 @@
     <None Include="Umbraco_client\CodeMirror\js\mode\coffeescript\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\pascal\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\perl\LICENSE" />
-    <Content Include="Umbraco_client\CodeMirror\js\mode\razor\LICENSE" />
+    <Content Include="Umbraco_client\CodeMirror\js\mode\xslt\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\ruby\LICENSE" />
     <None Include="Umbraco_client\CodeMirror\js\mode\r\LICENSE" />
     <Content Include="Umbraco_client\CodeMirror\js\mode\sieve\LICENSE" />

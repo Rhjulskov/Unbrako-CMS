@@ -65,8 +65,8 @@ namespace Umbraco.Web.Mvc {
         ///&lt;configuration&gt;
         ///
         ///  &lt;configSections&gt;
-        ///    &lt;sectionGroup name=&quot;system.web.webPages.razor&quot; type=&quot;System.Web.WebPages.Razor.Configuration.RazorWebSectionGroup, System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35&quot;&gt;
-        ///      &lt;section name=&quot;host&quot; type=&quot;System.Web.WebPages.Razor.Configuration.HostSection, System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35&quot; requirePermission=&quot;false&quot; /&gt;
+        ///    &lt;sectionGroup name=&quot;system.web.webPages.xslt&quot; type=&quot;System.Web.WebPages.xslt.Configuration.xsltWebSectionGroup, System.Web.WebPages.xslt, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35&quot;&gt;
+        ///      &lt;section name=&quot;host&quot; type=&quot;System.Web.WebPages.xslt.Configuration.HostSection, System.Web.WebPages.xslt, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35&quot; requirePermission=&quot;false&quot; /&gt;
         ///      &lt;section name=&quot;page [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string WebConfigTemplate {

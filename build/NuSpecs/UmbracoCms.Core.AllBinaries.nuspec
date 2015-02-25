@@ -54,11 +54,11 @@
     <file src="..\_BuildOutput\bin\System.Web.Http.dll" target="lib\System.Web.Http.dll" />
     <file src="..\_BuildOutput\bin\System.Web.Http.WebHost.dll" target="lib\System.Web.Http.WebHost.dll" />
     <file src="..\_BuildOutput\bin\System.Web.Mvc.dll" target="lib\System.Web.Mvc.dll" />
-    <file src="..\_BuildOutput\bin\System.Web.Razor.dll" target="lib\System.Web.Razor.dll" />
+    <file src="..\_BuildOutput\bin\System.Web.xslt.dll" target="lib\System.Web.xslt.dll" />
     <file src="..\_BuildOutput\bin\System.Web.WebPages.Administration.dll" target="lib\System.Web.WebPages.Administration.dll" />
     <file src="..\_BuildOutput\bin\System.Web.WebPages.Deployment.dll" target="lib\System.Web.WebPages.Deployment.dll" />
     <file src="..\_BuildOutput\bin\System.Web.WebPages.dll" target="lib\System.Web.WebPages.dll" />
-    <file src="..\_BuildOutput\bin\System.Web.WebPages.Razor.dll" target="lib\System.Web.WebPages.Razor.dll" />
+    <file src="..\_BuildOutput\bin\System.Web.WebPages.xslt.dll" target="lib\System.Web.WebPages.xslt.dll" />
     <file src="..\_BuildOutput\bin\TidyNet.dll" target="lib\TidyNet.dll" />
     <file src="..\_BuildOutput\bin\Umbraco.Core.dll" target="lib\Umbraco.Core.dll" />
     <file src="..\_BuildOutput\bin\umbraco.DataLayer.dll" target="lib\umbraco.DataLayer.dll" />

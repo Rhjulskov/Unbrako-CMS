@@ -279,8 +279,8 @@ namespace Umbraco.Web
                     //
                     // The only thing we can do is fully disable trace output while .Execute() runs and restore afterwards
                     // which means trace output is lost if the macro is a control (.ascx or user control) that is invoked
-                    // from within Razor -- which makes sense anyway because the control can _not_ run correctly from
-                    // within Razor since it will never be inserted into the page pipeline (which may even not exist at all
+                    // from within xslt -- which makes sense anyway because the control can _not_ run correctly from
+                    // within xslt since it will never be inserted into the page pipeline (which may even not exist at all
                     // if we're running MVC).
                     //
                     // I'm sure there's more things that will get lost with this context changing but I guess we'll figure 

@@ -15,7 +15,7 @@
     </AddLink>
     <AddLink InDashboard="True" InLearn="True">
       <Title>Extending Umbraco using WebMatrix</Title>
-      <Description>In this 5-minute video tutorial you'll learn how to edit templates, use the Razor syntax to add dynamic functionality and deploy an Umbraco site - all from within WebMatrix.</Description>
+      <Description>In this 5-minute video tutorial you'll learn how to edit templates, use the xslt syntax to add dynamic functionality and deploy an Umbraco site - all from within WebMatrix.</Description>
       <Uri>http://umbraco.com/help-and-support/video-tutorials/getting-started/working-with-webmatrix</Uri>
       <ImageUri>http://cdn.umbraco.org/cdn/umbraco/images/webmatrix/umbraco.png</ImageUri>
     </AddLink>

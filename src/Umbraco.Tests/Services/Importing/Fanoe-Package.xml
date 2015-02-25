@@ -958,7 +958,7 @@
     </file>
     <file>
       <guid>HtmlTable.cshtml</guid>
-      <orgPath>/App_Plugins/UmbracoForms/RazorTemplates</orgPath>
+      <orgPath>/App_Plugins/UmbracoForms/xsltTemplates</orgPath>
       <orgName>HtmlTable.cshtml</orgName>
     </file>
     <file>

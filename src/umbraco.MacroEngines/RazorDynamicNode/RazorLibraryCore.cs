@@ -9,7 +9,7 @@ using System.Web;
 
 namespace umbraco.MacroEngines.Library
 {
-	public class RazorLibraryCore
+	public class xsltLibraryCore
     {
         private readonly INode _node;
     	private readonly UmbracoHelper _umbracoHelper;
@@ -23,7 +23,7 @@ namespace umbraco.MacroEngines.Library
         {
             get { return _node; }
         }
-        public RazorLibraryCore(INode node)
+        public xsltLibraryCore(INode node)
         {
             this._node = node;
 			_umbracoHelper = new UmbracoHelper(UmbracoContext.Current);

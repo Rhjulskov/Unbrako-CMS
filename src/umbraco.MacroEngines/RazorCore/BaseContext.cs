@@ -58,11 +58,11 @@ namespace umbraco.MacroEngines
             return CultureDictionary[key];
         }
 
-        public RazorLibraryCore Library
+        public xsltLibraryCore Library
         {
             get
             {
-                return new RazorLibraryCore(this._node);
+                return new xsltLibraryCore(this._node);
             }
         }
 

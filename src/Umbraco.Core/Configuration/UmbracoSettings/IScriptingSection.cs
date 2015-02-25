@@ -6,6 +6,6 @@ namespace Umbraco.Core.Configuration.UmbracoSettings
     {
         IEnumerable<INotDynamicXmlDocument> NotDynamicXmlDocumentElements { get; }
 
-        IEnumerable<IRazorStaticMapping> DataTypeModelStaticMappings { get; }
+        IEnumerable<IxsltStaticMapping> DataTypeModelStaticMappings { get; }
     }
 }

@@ -313,9 +313,9 @@ namespace Umbraco.Tests.Plugins
         }
 
         [Test]
-        public void Resolves_RazorDataTypeModels()
+        public void Resolves_xsltDataTypeModels()
         {
-            var types = PluginManager.Current.ResolveRazorDataTypeModels();
+            var types = PluginManager.Current.ResolvexsltDataTypeModels();
             Assert.AreEqual(2, types.Count());
         }
 

@@ -17,7 +17,7 @@ namespace Umbraco.Tests.BootManagers
 			IList<IViewEngine> engines = new List<IViewEngine>
 				{
 					new FixedWebFormViewEngine(),
-					new FixedRazorViewEngine(),
+					new FixedxsltViewEngine(),
 					new RenderViewEngine(),
 					new PluginViewEngine()
 				};
@@ -37,7 +37,7 @@ namespace Umbraco.Tests.BootManagers
 			IList<IViewEngine> engines = new List<IViewEngine>
 				{
 					new FixedWebFormViewEngine(),
-					new FixedRazorViewEngine(),
+					new FixedxsltViewEngine(),
 					new RenderViewEngine(),
 					new PluginViewEngine()
 				};
@@ -46,7 +46,7 @@ namespace Umbraco.Tests.BootManagers
 
 			Assert.That(engines.Count, Is.EqualTo(4));
 			Assert.That(((ProfilingViewEngine)engines[0]).Inner, Is.InstanceOf<FixedWebFormViewEngine>());
-			Assert.That(((ProfilingViewEngine)engines[1]).Inner, Is.InstanceOf<FixedRazorViewEngine>());
+			Assert.That(((ProfilingViewEngine)engines[1]).Inner, Is.InstanceOf<FixedxsltViewEngine>());
 			Assert.That(((ProfilingViewEngine)engines[2]).Inner, Is.InstanceOf<RenderViewEngine>());
 			Assert.That(((ProfilingViewEngine)engines[3]).Inner, Is.InstanceOf<PluginViewEngine>());
 		}
@@ -55,7 +55,7 @@ namespace Umbraco.Tests.BootManagers
 		[Test]
 		public void WrapViewEngines_HasProfiledEngine_AddsSameInstance()
 		{
-			var profiledEngine = new ProfilingViewEngine(new FixedRazorViewEngine());
+			var profiledEngine = new ProfilingViewEngine(new FixedxsltViewEngine());
 			IList<IViewEngine> engines = new List<IViewEngine>
 				{
 					profiledEngine

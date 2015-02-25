@@ -67,9 +67,9 @@ if ($project) {
 		if(Test-Path $umbracoBinFolder\System.Web.Http.dll) { Remove-Item $umbracoBinFolder\System.Web.Http.dll -Force -Confirm:$false }
 		if(Test-Path $umbracoBinFolder\System.Web.Http.WebHost.dll) { Remove-Item $umbracoBinFolder\System.Web.Http.WebHost.dll -Force -Confirm:$false }
 		if(Test-Path $umbracoBinFolder\System.Web.Mvc.dll) { Remove-Item $umbracoBinFolder\System.Web.Mvc.dll -Force -Confirm:$false }
-		if(Test-Path $umbracoBinFolder\System.Web.Razor.dll) { Remove-Item $umbracoBinFolder\System.Web.Razor.dll -Force -Confirm:$false }
+		if(Test-Path $umbracoBinFolder\System.Web.xslt.dll) { Remove-Item $umbracoBinFolder\System.Web.xslt.dll -Force -Confirm:$false }
 		if(Test-Path $umbracoBinFolder\System.Web.WebPages.dll) { Remove-Item $umbracoBinFolder\System.Web.WebPages.dll -Force -Confirm:$false }
 		if(Test-Path $umbracoBinFolder\System.Web.WebPages.Deployment.dll) { Remove-Item $umbracoBinFolder\System.Web.WebPages.Deployment.dll -Force -Confirm:$false }
-		if(Test-Path $umbracoBinFolder\System.Web.WebPages.Razor.dll) { Remove-Item $umbracoBinFolder\System.Web.WebPages.Razor.dll -Force -Confirm:$false }
+		if(Test-Path $umbracoBinFolder\System.Web.WebPages.xslt.dll) { Remove-Item $umbracoBinFolder\System.Web.WebPages.xslt.dll -Force -Confirm:$false }
 	}
 }

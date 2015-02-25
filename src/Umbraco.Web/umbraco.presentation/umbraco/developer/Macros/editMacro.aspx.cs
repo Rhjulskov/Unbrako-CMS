@@ -68,7 +68,7 @@ namespace umbraco.cms.presentation.developer
 				// Load xslt files from default dir
 				PopulateXsltFiles();
 
-				// Load razor script files from default dir
+				// Load xslt script files from default dir
                 PopulateMacroScriptFiles();
 
 				// Load usercontrols
@@ -169,10 +169,10 @@ namespace umbraco.cms.presentation.developer
 
         private void PopulateMacroScriptFiles()
 		{
-			var razors = new ArrayList();
-			var razorDir = IOHelper.MapPath(SystemDirectories.MacroScripts + "/");
-			GetMacroScriptFilesFromDir(razorDir, razorDir, razors);
-			pythonFiles.DataSource = razors;
+			var xslts = new ArrayList();
+			var xsltDir = IOHelper.MapPath(SystemDirectories.MacroScripts + "/");
+			GetMacroScriptFilesFromDir(xsltDir, xsltDir, xslts);
+			pythonFiles.DataSource = xslts;
 			pythonFiles.DataBind();
 			pythonFiles.Items.Insert(0, new ListItem("Browse scripting files on server...", string.Empty));
 		}

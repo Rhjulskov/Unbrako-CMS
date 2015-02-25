@@ -2,7 +2,7 @@
 
 namespace Umbraco.Core.Configuration.UmbracoSettings
 {
-    internal class RazorStaticMappingElement : InnerTextConfigurationElement<string>, IRazorStaticMapping
+    internal class xsltStaticMappingElement : InnerTextConfigurationElement<string>, IxsltStaticMapping
     {
         public Guid DataTypeGuid
         {
@@ -34,7 +34,7 @@ namespace Umbraco.Core.Configuration.UmbracoSettings
             }
         }
 
-        string IRazorStaticMapping.MappingName
+        string IxsltStaticMapping.MappingName
         {
             get { return Value; }
         }

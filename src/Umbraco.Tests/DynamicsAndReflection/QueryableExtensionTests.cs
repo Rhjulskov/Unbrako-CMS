@@ -7,7 +7,7 @@ using Umbraco.Web.Dynamics;
 namespace Umbraco.Tests.DynamicsAndReflection
 {
     //NOTE: there's libraries in both Umbraco.Core.Dynamics and Umbraco.Web.Dynamics - the reason for this is that the Web.Dynamics
-    // started with the razor macro implementation and is modified with hard coded references to dynamic node and dynamic null, though it seems
+    // started with the xslt macro implementation and is modified with hard coded references to dynamic node and dynamic null, though it seems
     // to still work for other regular classes I don't want to move it to the core without removing these references but that would require a lot of work.
 
     [TestFixture]

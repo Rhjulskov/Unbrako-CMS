@@ -8,7 +8,7 @@ namespace Umbraco.Core.Configuration
 	// have converters registered in code so we don't have to rely on even more config sections. 
 	// These things probably won't need to be created all that often and in code is much easier to do.
 
-    internal class RazorDataTypeModelStaticMappingItem
+    internal class xsltDataTypeModelStaticMappingItem
     {
         [Obsolete("This is not used whatsoever")]
 		public string Raw { get; set; }

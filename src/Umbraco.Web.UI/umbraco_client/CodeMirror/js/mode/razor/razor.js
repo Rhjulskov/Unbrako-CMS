@@ -1,4 +1,4 @@
-CodeMirror.defineMode("razor", function(config, parserConfig) {
+CodeMirror.defineMode("xslt", function(config, parserConfig) {
   var indentUnit = config.indentUnit,
       keywords = words("abstract as base break case catch checked class const continue" + 
                     " default delegate do else enum event explicit extern finally fixed for" + 
@@ -224,8 +224,8 @@ CodeMirror.defineMode("razor", function(config, parserConfig) {
     hooks: {"#": cppHook}
   });*/
   
-  CodeMirror.defineMIME("text/x-razor", {
-    name: "razor",
+  CodeMirror.defineMIME("text/x-xslt", {
+    name: "xslt",
     keywords: words("abstract as base break case catch checked class const continue" + 
                     " default delegate do else enum event explicit extern finally fixed for" + 
                     " foreach goto if implicit in interface internal is lock namespace new" + 

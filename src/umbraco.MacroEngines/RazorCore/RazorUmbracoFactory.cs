@@ -1,9 +1,9 @@
-﻿using System.Web.WebPages.Razor;
+﻿using System.Web.WebPages.xslt;
 
 namespace umbraco.MacroEngines {
-    public class RazorUmbracoFactory : WebRazorHostFactory {
-        public override WebPageRazorHost CreateHost(string virtualPath, string physicalPath) {
-            return new RazorUmbracoHost(virtualPath, physicalPath);
+    public class xsltUmbracoFactory : WebxsltHostFactory {
+        public override WebPagexsltHost CreateHost(string virtualPath, string physicalPath) {
+            return new xsltUmbracoHost(virtualPath, physicalPath);
         }
     }
 }

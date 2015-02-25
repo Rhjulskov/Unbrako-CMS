@@ -76,7 +76,7 @@ namespace Umbraco.Tests.Macros
         }
 
         [TestCase("text.xslt", "", "", "", "XSLT")]
-        [TestCase("", "razor-script.cshtml", "", "", "Script")]
+        [TestCase("", "xslt-script.cshtml", "", "", "Script")]
         [TestCase("", "~/Views/MacroPartials/test.cshtml", "", "", "PartialView")]
         [TestCase("", "~/App_Plugins/MyPackage/Views/MacroPartials/test.cshtml", "", "", "PartialView")]
         [TestCase("", "", "~/usercontrols/menu.ascx", "", "UserControl")]
@@ -90,7 +90,7 @@ namespace Umbraco.Tests.Macros
         }
 
         [TestCase("text.xslt", "", "", "", "~/xslt/text.xslt")]
-        [TestCase("", "razor-script.cshtml", "", "", "~/macroScripts/razor-script.cshtml")]
+        [TestCase("", "xslt-script.cshtml", "", "", "~/macroScripts/xslt-script.cshtml")]
         [TestCase("", "~/Views/MacroPartials/test.cshtml", "", "", "~/Views/MacroPartials/test.cshtml")]
         [TestCase("", "~/App_Plugins/MyPackage/Views/MacroPartials/test.cshtml", "", "", "~/App_Plugins/MyPackage/Views/MacroPartials/test.cshtml")]
         [TestCase("", "", "~/usercontrols/menu.ascx", "", "~/usercontrols/menu.ascx")]

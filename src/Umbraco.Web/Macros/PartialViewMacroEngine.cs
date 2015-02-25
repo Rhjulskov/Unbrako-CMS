@@ -163,7 +163,7 @@ namespace Umbraco.Web.Macros
 
         private static PartialViewMacroPage CompileAndInstantiate(string virtualPath)
         {
-            //Compile Razor - We Will Leave This To ASP.NET Compilation Engine & ASP.NET WebPages
+            //Compile xslt - We Will Leave This To ASP.NET Compilation Engine & ASP.NET WebPages
             //Security in medium trust is strict around here, so we can only pass a virtual file path
             //ASP.NET Compilation Engine caches returned types
             //Changed From BuildManager As Other Properties Are Attached Like Context Path/

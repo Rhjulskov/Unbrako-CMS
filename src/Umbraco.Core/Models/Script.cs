@@ -41,7 +41,7 @@ namespace Umbraco.Core.Models
         // when we move Scripts to truly use IFileSystem, then this validation logic doesn't work anymore
         public override bool IsValid()
         {
-            //NOTE Since a script file can be both JS, Razor Views, Razor Macros and Xslt
+            //NOTE Since a script file can be both JS, xslt Views, xslt Macros and Xslt
             //it might be an idea to create validations for all 3 and divide the validation 
             //into 4 private methods.
             //See codeEditorSave.asmx.cs for reference.

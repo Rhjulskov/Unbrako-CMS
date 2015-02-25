@@ -16,9 +16,9 @@ namespace umbraco.MacroEngines
 		/// </summary>
 		/// <param name="resolver"></param>
 		/// <returns></returns>
-		internal static IEnumerable<Type> ResolveRazorDataTypeModels(this PluginManager resolver)
+		internal static IEnumerable<Type> ResolvexsltDataTypeModels(this PluginManager resolver)
 		{
-			return resolver.ResolveTypesWithAttribute<IRazorDataTypeModel, RazorDataTypeModel>();
+			return resolver.ResolveTypesWithAttribute<IxsltDataTypeModel, xsltDataTypeModel>();
 		}
 
 		

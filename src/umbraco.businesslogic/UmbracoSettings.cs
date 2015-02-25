@@ -8,7 +8,7 @@ using Umbraco.Core;
 using System.Collections.Generic;
 using Umbraco.Core.Configuration;
 using Umbraco.Core.Logging;
-using RazorDataTypeModelStaticMappingItem = umbraco.MacroEngines.RazorDataTypeModelStaticMappingItem;
+using xsltDataTypeModelStaticMappingItem = umbraco.MacroEngines.xsltDataTypeModelStaticMappingItem;
 
 namespace umbraco
 {
@@ -180,21 +180,21 @@ namespace umbraco
         }
 
         /// <summary>
-        /// razor DynamicNode typecasting detects XML and returns DynamicXml - Root elements that won't convert to DynamicXml
+        /// xslt DynamicNode typecasting detects XML and returns DynamicXml - Root elements that won't convert to DynamicXml
         /// </summary>
         public static List<string> NotDynamicXmlDocumentElements
         {
             get { return UmbracoConfig.For.UmbracoSettings().Scripting.NotDynamicXmlDocumentElements.Select(x => x.Element).ToList(); }
         }
 
-        public static List<RazorDataTypeModelStaticMappingItem> RazorDataTypeModelStaticMapping
+        public static List<xsltDataTypeModelStaticMappingItem> xsltDataTypeModelStaticMapping
         {
 			get
 			{
 			    var mapping = UmbracoConfig.For.UmbracoSettings().Scripting.DataTypeModelStaticMappings;
 				
 				//now we need to map to the old object until we can clean all this nonsense up
-				return mapping.Select(x => new RazorDataTypeModelStaticMappingItem()
+				return mapping.Select(x => new xsltDataTypeModelStaticMappingItem()
 					{
 						DataTypeGuid = x.DataTypeGuid,
 						NodeTypeAlias = x.NodeTypeAlias,

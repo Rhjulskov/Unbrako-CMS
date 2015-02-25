@@ -5,10 +5,10 @@ using System.Text;
 
 namespace umbraco.MacroEngines
 {
-	[Obsolete("use Umbraco.Core.RazorDataTypeModelStaticMappingItem instead")]
-    public class RazorDataTypeModelStaticMappingItem
+	[Obsolete("use Umbraco.Core.xsltDataTypeModelStaticMappingItem instead")]
+    public class xsltDataTypeModelStaticMappingItem
 	{
-		private readonly Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem _realMappingItem = new Umbraco.Core.Configuration.RazorDataTypeModelStaticMappingItem();
+		private readonly Umbraco.Core.Configuration.xsltDataTypeModelStaticMappingItem _realMappingItem = new Umbraco.Core.Configuration.xsltDataTypeModelStaticMappingItem();
 
 		public string Raw
 		{

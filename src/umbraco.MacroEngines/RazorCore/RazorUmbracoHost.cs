@@ -1,18 +1,18 @@
 ﻿using System;
 using System.IO;
-using System.Web.Razor;
-using System.Web.WebPages.Razor;
+using System.Web.xslt;
+using System.Web.WebPages.xslt;
 
 namespace umbraco.MacroEngines
 {
-    public class RazorUmbracoHost : WebPageRazorHost {
-        public RazorUmbracoHost(string virtualPath) : base(virtualPath) {}
-        public RazorUmbracoHost(string virtualPath, string physicalPath) : base(virtualPath, physicalPath) {}
+    public class xsltUmbracoHost : WebPagexsltHost {
+        public xsltUmbracoHost(string virtualPath) : base(virtualPath) {}
+        public xsltUmbracoHost(string virtualPath, string physicalPath) : base(virtualPath, physicalPath) {}
 
-        protected override RazorCodeLanguage GetCodeLanguage() {
+        protected override xsltCodeLanguage GetCodeLanguage() {
             var ext = Path.GetExtension(VirtualPath);
-            if (string.Equals(ext, ".razor", StringComparison.OrdinalIgnoreCase))
-                return new CSharpRazorCodeLanguage();
+            if (string.Equals(ext, ".xslt", StringComparison.OrdinalIgnoreCase))
+                return new CSharpxsltCodeLanguage();
             return base.GetCodeLanguage();
         }
 

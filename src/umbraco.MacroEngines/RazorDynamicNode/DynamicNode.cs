@@ -404,16 +404,16 @@ namespace umbraco.MacroEngines
             return result;
         }
 
-    	private static Dictionary<System.Tuple<Guid, int>, Type> _razorDataTypeModelTypes = null;
+    	private static Dictionary<System.Tuple<Guid, int>, Type> _xsltDataTypeModelTypes = null;
     	private static readonly ReaderWriterLockSlim _locker = new ReaderWriterLockSlim();
 
-    	internal static Dictionary<System.Tuple<Guid, int>, Type> RazorDataTypeModelTypes
+    	internal static Dictionary<System.Tuple<Guid, int>, Type> xsltDataTypeModelTypes
     	{
     		get
     		{
     			using (var l = new UpgradeableReadLock(_locker))
     			{
-    				if (_razorDataTypeModelTypes == null)
+    				if (_xsltDataTypeModelTypes == null)
     				{
     					l.UpgradeToWriteLock();
 
@@ -421,15 +421,15 @@ namespace umbraco.MacroEngines
 
 						try
 						{
-							PluginManager.Current.ResolveRazorDataTypeModels()
+							PluginManager.Current.ResolvexsltDataTypeModels()
 								.ToList()
 								.ConvertAll(type =>
 								{
-									var razorDataTypeModelAttributes = type.GetCustomAttributes<RazorDataTypeModel>(true);
-									return razorDataTypeModelAttributes.ToList().ConvertAll(razorDataTypeModelAttribute =>
+									var xsltDataTypeModelAttributes = type.GetCustomAttributes<xsltDataTypeModel>(true);
+									return xsltDataTypeModelAttributes.ToList().ConvertAll(xsltDataTypeModelAttribute =>
 									{
-										var g = razorDataTypeModelAttribute.DataTypeEditorId;
-										var priority = razorDataTypeModelAttribute.Priority;
+										var g = xsltDataTypeModelAttribute.DataTypeEditorId;
+										var priority = xsltDataTypeModelAttribute.Priority;
 										return new KeyValuePair<System.Tuple<Guid, int>, Type>(new System.Tuple<Guid, int>(g, priority), type);
 									});
 								})
@@ -445,17 +445,17 @@ namespace umbraco.MacroEngines
 								});
 
 							//there is no error, so set the collection
-							_razorDataTypeModelTypes = foundTypes;
+							_xsltDataTypeModelTypes = foundTypes;
 
 						}
 						catch (Exception ex)
 						{
-							LogHelper.Warn<DynamicNode>("Exception occurred while populating cache, will keep RazorDataTypeModelTypes to null so that this error remains visible and you don't end up with an empty cache with silent failure."
+							LogHelper.Warn<DynamicNode>("Exception occurred while populating cache, will keep xsltDataTypeModelTypes to null so that this error remains visible and you don't end up with an empty cache with silent failure."
 								+ string.Format("The exception was {0} and the message was {1}. {2}", ex.GetType().FullName, ex.Message, ex.StackTrace));							
 						}
 
     				}
-					return _razorDataTypeModelTypes;
+					return _xsltDataTypeModelTypes;
     			}
     		}
     	}
@@ -466,7 +466,7 @@ namespace umbraco.MacroEngines
 		}
 
         /// <summary>
-        /// Returns the value from the property result and ensure it is filtered through the razor data type converters
+        /// Returns the value from the property result and ensure it is filtered through the xslt data type converters
         /// </summary>
         /// <param name="propResult"></param>
         /// <param name="result">The value result for the property</param>
@@ -488,7 +488,7 @@ namespace umbraco.MacroEngines
             
             //now we need to map to the old object until we can clean all this nonsense up
             var configMapping = UmbracoConfig.For.UmbracoSettings().Scripting.DataTypeModelStaticMappings
-                                                    .Select(x => new RazorDataTypeModelStaticMappingItem()
+                                                    .Select(x => new xsltDataTypeModelStaticMappingItem()
                                                         {
                                                             DataTypeGuid = x.DataTypeGuid,
                                                             NodeTypeAlias = x.NodeTypeAlias,
@@ -506,7 +506,7 @@ namespace umbraco.MacroEngines
                 if (dataTypeType != null)
                 {
                     object valueOutput = null;
-                    if (TryCreateInstanceRazorDataTypeModel(dataType, dataTypeType, propResult.Value, out valueOutput))
+                    if (TryCreateInstancexsltDataTypeModel(dataType, dataTypeType, propResult.Value, out valueOutput))
                     {
                         result = valueOutput;
                         return true;
@@ -519,14 +519,14 @@ namespace umbraco.MacroEngines
                 }
             }
 
-            if (RazorDataTypeModelTypes != null && RazorDataTypeModelTypes.Any(model => model.Key.Item1 == dataType) && dataType != Guid.Empty)
+            if (xsltDataTypeModelTypes != null && xsltDataTypeModelTypes.Any(model => model.Key.Item1 == dataType) && dataType != Guid.Empty)
             {
-                var razorDataTypeModelDefinition = RazorDataTypeModelTypes.Where(model => model.Key.Item1 == dataType).OrderByDescending(model => model.Key.Item2).FirstOrDefault();
-                if (!(razorDataTypeModelDefinition.Equals(default(KeyValuePair<System.Tuple<Guid, int>, Type>))))
+                var xsltDataTypeModelDefinition = xsltDataTypeModelTypes.Where(model => model.Key.Item1 == dataType).OrderByDescending(model => model.Key.Item2).FirstOrDefault();
+                if (!(xsltDataTypeModelDefinition.Equals(default(KeyValuePair<System.Tuple<Guid, int>, Type>))))
                 {
-                    Type dataTypeType = razorDataTypeModelDefinition.Value;
+                    Type dataTypeType = xsltDataTypeModelDefinition.Value;
                     object valueResult = null;
-                    if (TryCreateInstanceRazorDataTypeModel(dataType, dataTypeType, propResult.Value, out valueResult))
+                    if (TryCreateInstancexsltDataTypeModel(dataType, dataTypeType, propResult.Value, out valueResult))
                     {
                         result = valueResult;
                         return true;
@@ -535,7 +535,7 @@ namespace umbraco.MacroEngines
                 }
                 else
                 {
-                    LogHelper.Warn<DynamicNode>(string.Format("Could not get the dataTypeType for the RazorDataTypeModel"));
+                    LogHelper.Warn<DynamicNode>(string.Format("Could not get the dataTypeType for the xsltDataTypeModel"));
                 }
             }
 
@@ -662,17 +662,17 @@ namespace umbraco.MacroEngines
             return attempt.Success ? attempt.Result : null;
         }
 
-        private bool TryCreateInstanceRazorDataTypeModel(Guid dataType, Type dataTypeType, string value, out object result)
+        private bool TryCreateInstancexsltDataTypeModel(Guid dataType, Type dataTypeType, string value, out object result)
         {
-            IRazorDataTypeModel razorDataTypeModel = Activator.CreateInstance(dataTypeType, false) as IRazorDataTypeModel;
-            if (razorDataTypeModel != null)
+            IxsltDataTypeModel xsltDataTypeModel = Activator.CreateInstance(dataTypeType, false) as IxsltDataTypeModel;
+            if (xsltDataTypeModel != null)
             {
                 object instance = null;
-                if (razorDataTypeModel.Init(n.Id, value, out instance))
+                if (xsltDataTypeModel.Init(n.Id, value, out instance))
                 {
                     if (instance == null)
                     {
-						LogHelper.Warn<DynamicNode>("razorDataTypeModel successfully instantiated but returned null for instance");
+						LogHelper.Warn<DynamicNode>("xsltDataTypeModel successfully instantiated but returned null for instance");
                     }
                 	result = instance;
                     return true;
@@ -681,13 +681,13 @@ namespace umbraco.MacroEngines
                 {
                     if (instance == null)
                     {
-						LogHelper.Warn<DynamicNode>("razorDataTypeModel successfully instantiated but returned null for instance");
+						LogHelper.Warn<DynamicNode>("xsltDataTypeModel successfully instantiated but returned null for instance");
                     }
                 }
             }
             else
             {
-				LogHelper.Warn<DynamicNode>(string.Format("DataTypeModel {0} failed to instantiate, perhaps it is lacking a parameterless constructor or doesn't implement IRazorDataTypeModel?", dataTypeType.FullName));
+				LogHelper.Warn<DynamicNode>(string.Format("DataTypeModel {0} failed to instantiate, perhaps it is lacking a parameterless constructor or doesn't implement IxsltDataTypeModel?", dataTypeType.FullName));
             }
             result = null;
             return false;
@@ -820,7 +820,7 @@ namespace umbraco.MacroEngines
                     int mediaNodeId;
                     if (int.TryParse(prop.Value, out mediaNodeId))
                     {
-                        return razorLibrary.Value.MediaById(mediaNodeId);
+                        return xsltLibrary.Value.MediaById(mediaNodeId);
                     }
                 }
                 return null;
@@ -1105,14 +1105,14 @@ namespace umbraco.MacroEngines
             }
         }
 
-        private Lazy<RazorLibraryCore> razorLibrary = new Lazy<RazorLibraryCore>(() =>
+        private Lazy<xsltLibraryCore> xsltLibrary = new Lazy<xsltLibraryCore>(() =>
         {
-            return new RazorLibraryCore(null);
+            return new xsltLibraryCore(null);
         });
         [Obsolete("@Model.NodeById is obsolute, use @Library.NodeById")]
         public DynamicNode NodeById(int Id)
         {
-            var node = razorLibrary.Value.NodeById(Id);
+            var node = xsltLibrary.Value.NodeById(Id);
             if (node is DynamicNull)
             {
                 return new DynamicNode(0);
@@ -1122,7 +1122,7 @@ namespace umbraco.MacroEngines
         [Obsolete("@Model.NodeById is obsolute, use @Library.NodeById")]
         public DynamicNode NodeById(string Id)
         {
-            var node = razorLibrary.Value.NodeById(Id);
+            var node = xsltLibrary.Value.NodeById(Id);
             if (node is DynamicNull)
             {
                 return new DynamicNode(0);
@@ -1132,7 +1132,7 @@ namespace umbraco.MacroEngines
         [Obsolete("@Model.NodeById is obsolute, use @Library.NodeById")]
         public DynamicNode NodeById(object Id)
         {
-            var node = razorLibrary.Value.NodeById(Id);
+            var node = xsltLibrary.Value.NodeById(Id);
             if (node is DynamicNull)
             {
                 return new DynamicNode(0);
@@ -1142,22 +1142,22 @@ namespace umbraco.MacroEngines
         [Obsolete("@Model.NodeById is obsolute, use @Library.NodeById")]
         public DynamicNodeList NodesById(List<object> Ids)
         {
-            return razorLibrary.Value.NodesById(Ids);
+            return xsltLibrary.Value.NodesById(Ids);
         }
         [Obsolete("@Model.NodeById is obsolute, use @Library.NodeById")]
         public DynamicNodeList NodesById(List<int> Ids)
         {
-            return razorLibrary.Value.NodesById(Ids);
+            return xsltLibrary.Value.NodesById(Ids);
         }
         [Obsolete("@Model.NodeById is obsolute, use @Library.NodeById")]
         public DynamicNodeList NodesById(params object[] Ids)
         {
-            return razorLibrary.Value.NodesById(Ids);
+            return xsltLibrary.Value.NodesById(Ids);
         }
         [Obsolete("@Model.MediaById is obsolute, use @Library.MediaById")]
         public DynamicNode MediaById(int Id)
         {
-            var media = razorLibrary.Value.MediaById(Id);
+            var media = xsltLibrary.Value.MediaById(Id);
             if (media is DynamicNull)
             {
                 return new DynamicNode(0);
@@ -1167,7 +1167,7 @@ namespace umbraco.MacroEngines
         [Obsolete("@Model.MediaById is obsolute, use @Library.MediaById")]
         public DynamicNode MediaById(string Id)
         {
-            var media = razorLibrary.Value.MediaById(Id);
+            var media = xsltLibrary.Value.MediaById(Id);
             if (media is DynamicNull)
             {
                 return new DynamicNode(0);
@@ -1177,7 +1177,7 @@ namespace umbraco.MacroEngines
         [Obsolete("@Model.MediaById is obsolute, use @Library.MediaById")]
         public DynamicNode MediaById(object Id)
         {
-            var media = razorLibrary.Value.MediaById(Id);
+            var media = xsltLibrary.Value.MediaById(Id);
             if (media is DynamicNull)
             {
                 return new DynamicNode(0);
@@ -1187,17 +1187,17 @@ namespace umbraco.MacroEngines
         [Obsolete("@Model.MediaById is obsolute, use @Library.MediaById")]
         public DynamicNodeList MediaById(List<object> Ids)
         {
-            return razorLibrary.Value.MediaById(Ids);
+            return xsltLibrary.Value.MediaById(Ids);
         }
         [Obsolete("@Model.MediaById is obsolute, use @Library.MediaById")]
         public DynamicNodeList MediaById(List<int> Ids)
         {
-            return razorLibrary.Value.MediaById(Ids);
+            return xsltLibrary.Value.MediaById(Ids);
         }
         [Obsolete("@Model.MediaById is obsolute, use @Library.MediaById")]
         public DynamicNodeList MediaById(params object[] Ids)
         {
-            return razorLibrary.Value.MediaById(Ids);
+            return xsltLibrary.Value.MediaById(Ids);
         }
 
         public int template

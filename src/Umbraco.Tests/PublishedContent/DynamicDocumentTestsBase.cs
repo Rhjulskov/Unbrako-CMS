@@ -31,7 +31,7 @@ namespace Umbraco.Tests.PublishedContent
             SettingsForTests.ConfigureSettings(_umbracoSettings);
 
             var scriptingMock = Mock.Get(_umbracoSettings.Scripting);
-            scriptingMock.Setup(x => x.DataTypeModelStaticMappings).Returns(new List<IRazorStaticMapping>());
+            scriptingMock.Setup(x => x.DataTypeModelStaticMappings).Returns(new List<IxsltStaticMapping>());
 
             // need to specify a custom callback for unit tests
             // AutoPublishedContentTypes generates properties automatically
@@ -591,7 +591,7 @@ namespace Umbraco.Tests.PublishedContent
 			Assert.IsNotNull(result);
 
             // ancestor-or-self has to be self!
-            // but that's not what the "legacy" razor macro engine does...
+            // but that's not what the "legacy" xslt macro engine does...
             if (result is Umbraco.Web.Models.DynamicPublishedContent)
     			Assert.AreEqual(1173, (int)result.Id); // that one works
             else
